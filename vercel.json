@@ -1,5 +1,6 @@
 {
     "buildCommand": "npm install && npm install --prifix client && npm run build --prefix client",
+    "outputDirectory": "/client/dist",
     "builds": [
       {
         "src": "server/index.js",
