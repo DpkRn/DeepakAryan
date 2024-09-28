@@ -1,5 +1,5 @@
 {
-    
+    "buildCommand": "npm install && npm install --prifix client && npm run build --prefix client",
     "builds": [
       {
         "src": "server/index.js",
