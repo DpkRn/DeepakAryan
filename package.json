@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "npm install && npm run build --prefix client", 
+    "build": "npm install && npm install --prefix client && npm run build --prefix client", 
     "start": "node server/index.js"
   },
   "dependencies": {
