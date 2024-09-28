@@ -24,7 +24,8 @@ app.get('/ping',(req,res)=>{
 })
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+    console.log("serving")
+    return res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
 app.use('/api/auth',loginRouter)
