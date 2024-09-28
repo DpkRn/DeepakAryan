@@ -1,6 +1,8 @@
 {
-  "scripts": {    
-    "start": "node index.js"
+  "scripts": {
+    "dev": "vite",
+    "build": "npm install && npm run build --prefix client", 
+    "start": "node server/index.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",
