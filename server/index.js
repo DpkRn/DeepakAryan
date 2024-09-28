@@ -23,6 +23,9 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
+app.get('/ping',(req,res)=>{
+    res.send("pong")
+})
 app.use('/api/auth',loginRouter)
 app.use('/api/projects',projectRouter)
 app.get('/api/auth/verify',verifyToken)
