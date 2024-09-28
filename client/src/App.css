@@ -1,0 +1,33 @@
+#root{
+  background-color: #081b29;
+
+/* 
+  background: rgb(2,0,36);
+background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(86,9,121,1) 35%, rgba(0,212,255,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(86,9,121,1) 35%, rgba(0,212,255,1) 100%);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(86,9,121,1) 35%, rgba(0,212,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1); */
+}
+
+.radial-text-gradient {
+  background: radial-gradient(circle, rgb(0, 225, 255), rgb(11, 14, 223));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.backgroundGrident{
+  transition: .5s all ease-in-out;
+  border-radius: 10px;
+}
+
+.backgroundGrident:hover {
+  cursor: pointer;
+  /* background: rgba(131,58,180,1) ; */
+  background:rgb(19, 46, 121);
+  background-position: 100% 0; /* Move the background position on hover */
+}
+/* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(87,69,252,1) 100%); */
+
+

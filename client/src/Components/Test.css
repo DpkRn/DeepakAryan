@@ -1,0 +1,27 @@
+
+
+  
+  .section-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .section-header h1 {
+    
+    color: #ddd;
+    margin: 0;
+    text-transform: uppercase;
+ 
+  }
+   .section-header p {
+  
+    text-align: center;
+   
+    color: #ddd;
+    margin: 0;
+   
+   
+  } 
+  
+  
