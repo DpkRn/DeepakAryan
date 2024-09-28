@@ -19,13 +19,14 @@ app.use(cors({
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, '../client/dist')));
+app.get('/ping',(req,res)=>{
+    res.send("pong")
+})
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
-app.get('/api/ping',(req,res)=>{
-    res.send("pong")
-})
+
 app.use('/api/auth',loginRouter)
 app.use('/api/projects',projectRouter)
 app.get('/api/auth/verify',verifyToken)
