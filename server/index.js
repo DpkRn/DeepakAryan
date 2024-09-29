@@ -21,7 +21,7 @@ mongoose.connect(db_url).then(()=>{
 
 
 app.use(cors({
-     origin:'https://portfolio-woad-three-81.vercel.app',
+     origin:'https://deepak-aryan.vercel.app',
      methods:['GET','POST','DELETE','PUT'],
      credentials:true
 }))
