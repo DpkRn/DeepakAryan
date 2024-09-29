@@ -1,0 +1,187 @@
+
+ 
+  
+   .home-content{
+    /* border: 2px solid yellow; */
+    display: flex;
+   
+  
+    flex-direction: column;
+    gap: 7px;
+    padding-left: 20px;
+    /* line-height: 35px; */
+ 
+   } 
+  
+       
+
+#name{
+    font-size: 35px;
+}
+
+
+   
+     
+   .btn-box  a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color:#03e9f4;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 25px;
+   
+    letter-spacing: 2px
+  }
+ 
+  .btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    background: #1aeef5;
+    transform: skewX(35deg);
+    transition: 1s;
+    z-index: -1; 
+    transition: 1s;
+   
+    } 
+    .btn-box a:hover::before{
+      width: 100%;
+      cursor: pointer;
+     }  
+  
+  .btn-box a:hover {
+    /* background: #03e9f4;*/
+   color: #fff;
+    transition-delay:0s, 1s ;
+    
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .btn-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .btn-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .btn-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .btn-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .btn-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+
+  .social-icon a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+    background: transparent;
+    border: .2rem solid #0bc7e0;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.6s ease-in-out; /* Set transition duration here */
+}
+
+.social-icon a:hover {
+    cursor: pointer;
+    border: 3px solid blue;
+    background: rgb(2, 0, 36);
+    background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,54,0.9976365546218487) 35%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,54,0.9976365546218487) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,54,0.9976365546218487) 35%, rgba(0,212,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#00d4ff", GradientType=1);
+}
+
+
+    .box1 .img{
+   
+      opacity: .5;
+     
+      
+  }
+  .img:hover{
+      background-color: #081b29;
+      opacity: 1;
+  }
+ 

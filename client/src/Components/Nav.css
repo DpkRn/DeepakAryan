@@ -1,0 +1,40 @@
+.sidebar li {
+  width: 100%;
+  position: relative;
+}
+
+.sidebar a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1px; /* Adds space between text and underline */
+  text-shadow: 2px 2px 4px #03e9f4;
+}
+
+.sidebar a:hover {
+  background: radial-gradient(circle, rgb(0, 225, 255), rgb(11, 14, 223));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px 0px 0px #5d09ca;
+}
+
+.sidebar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0bc7e0;
+  transition: width 0.5s ease; /* Transition effect */
+}
+
+.sidebar a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 762px) {
+  .btn2 {
+    display: none;
+  }
+}
