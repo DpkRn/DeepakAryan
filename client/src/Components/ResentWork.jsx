@@ -101,7 +101,7 @@ function ResentWork() {
                   <div className="flex flex-col text-center border-solid h-full m-5">
                     <h3 className="font-bold text-[aqua] text-2xl uppercase">{project.title}</h3>
                     <span className="font-semibold text-white text-justify text-wrap mt-5 text-xl">
-                      {project.description.slice(0, 150)}
+                      {project.description.slice(0, 100)+"..."}
                     </span>
                     <span
                       className="absolute right-6 bottom-4 border rounded-md px-2 hover:cursor-pointer text-[aqua] font-bold text-lg"

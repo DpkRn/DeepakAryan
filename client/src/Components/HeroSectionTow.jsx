@@ -7,8 +7,8 @@ import cv from '../assets/DpkRnResume.pdf'
 function HeroSectionTwo() {
  
   const textArray = [
-    "Front-end Developer + ",
-    "React Enthusiast + ",
+    "Full Stack Developer + ",
+    "Software Enthusiast + ",
     "JavaScript Expert + ",
     "CSS Designer +",
   ];
@@ -53,7 +53,7 @@ function HeroSectionTwo() {
                   lg:mt-10"
               >
                 {" "}
-                Hi, i'm Anurag Kumar
+                Hi, i'm Deepak Kumar
               </h1>
             </div>
 
@@ -117,13 +117,13 @@ function HeroSectionTwo() {
                  lg:mt-9 
                   exs:max-sm:pt-5  md:max-lg:pt-9 xl:pt-12"
             >
-              <a href="https://github.com/Royanurag98?tab=repositories">
+              <a href="https://github.com/DpkRn">
                 <i className="bx bxl-github"></i>
               </a>
               <a href="">
                 <i className="bx bxl-facebook"></i>
               </a>
-              <a href="https://www.linkedin.com/in/anurag-kumar-7314402b8/">
+              <a href="http://www.linkedin.com/in/deepak-kumar-b3181a236">
                 <i className="bx bxl-linkedin"></i>
               </a>
               <a href="">

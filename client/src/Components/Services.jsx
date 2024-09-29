@@ -54,7 +54,7 @@ function Services() {
           <div className="flex pr-3   ">
             <div className="text-xl font-bold flex items-center gap-2 md:text-2xl md:w-[40%]">
               <p className="text-blue-500">01</p>
-              <p className="text-white">Branding Design</p>
+              <p className="text-white">Project Planner</p>
             </div>
 
             <div className="ml-auto  text-2xl origin-center md:order-last text-white rotate-45 transition duration-700  hover:rotate-[-45deg]">
@@ -76,7 +76,7 @@ function Services() {
           <div className="flex pr-3  ">
             <div className="text-xl font-bold flex items-center gap-2 md:text-2xl md:w-[40%]">
               <p className="text-blue-500">02</p>
-              <p className="text-white">Web Design</p>
+              <p className="text-white">Websites</p>
             </div>
 
             <div className="ml-auto  text-2xl origin-center md:order-last text-white rotate-45 transition duration-700  hover:rotate-[-45deg]">
@@ -97,7 +97,7 @@ function Services() {
           <div className="flex pr-3  ">
             <div className="text-xl font-bold flex items-center gap-2 md:text-2xl md:w-[40%]">
               <p className="text-blue-500">03</p>
-              <p className="text-white">UI/UX Design</p>
+              <p className="text-white">WebApps</p>
             </div>
 
             <div className="ml-auto  text-2xl origin-center md:order-last text-white rotate-45 transition duration-700  hover:rotate-[-45deg]">
@@ -118,7 +118,7 @@ function Services() {
           <div className="flex pr-3  ">
             <div className="text-xl font-bold flex items-center gap-2 md:text-2xl md:w-[40%]">
               <p className="text-blue-500">04</p>
-              <p className="text-white">Graphics Design</p>
+              <p className="text-white">Extensions</p>
             </div>
 
             <div className="ml-auto  text-2xl origin-center md:order-last text-white rotate-45 transition duration-700  hover:rotate-[-45deg]">

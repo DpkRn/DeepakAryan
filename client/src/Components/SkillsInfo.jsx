@@ -39,7 +39,7 @@ function SkillsInfo() {
           <div className="item-box1 rounded-lg lg:flex lg:justify-center lg:items-center lg:space-x-3  lg:h-[120px] ">
             <p
               className="text-xl lg:text-3xl  font-semibold text-white " >
-              120+
+              ...+
             </p>
             <p className=" text-sm lg:text-[20px] font-normal  text-[#03e9f4] ">
             Happy <br />
