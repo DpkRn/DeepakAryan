@@ -71,9 +71,9 @@ const addProject = async (req, res) => {
 const deleteProject=async(req,res)=>{
   try {
     const { id} = req.body;
-
+    console.log("project deleting")
     const projects = await Project.findByIdAndDelete(id);
-
+    console.log("project deleted")
     if (!projects) {
       return res.status(404).send("not found");
     }

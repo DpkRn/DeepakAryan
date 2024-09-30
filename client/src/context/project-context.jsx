@@ -30,7 +30,7 @@ export const ProjectContextProvider = ({ children }) => {
 
   const deleteProject=async(id)=>{
     try {
-      const response = await axios.delete('https://portfolio-api-pi-ten.vercel.app/api/projects/deleteproject',{id}, { withCredentials: true });
+      const response = await axios.delete('https://portfolio-api-pi-ten.vercel.app/api/projects/deleteproject',{id:id}, { withCredentials: true });
      // const response = await axios.get(`http://localhost:8080/api/projects/getallprojects`);
      if (response.status === 200) {
       console.log('project deleted')
