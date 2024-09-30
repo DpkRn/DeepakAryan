@@ -80,7 +80,7 @@ export const ProjectContextProvider = ({ children }) => {
  
 
   return (
-    <projectContext.Provider value={{ projects,isProjectAdded,addProject,editProject,setProjects }}>
+    <projectContext.Provider value={{ projects,isProjectAdded,deleteProject,addProject,editProject,setProjects }}>
       {children}
     </projectContext.Provider>
   );
