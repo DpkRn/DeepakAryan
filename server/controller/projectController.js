@@ -25,7 +25,9 @@ const editProject = async (req, res) => {
     const { id, title, description, projectType,image } = req.body;
     
     const result=await cloudinary.uploader.upload(image,{folder:'project-image'})
+    console.log(result)
     const imgUrl=result.secure_url;
+    console.log(imgUrl)
     const projects = await Project.findByIdAndUpdate(
       id,
       {
