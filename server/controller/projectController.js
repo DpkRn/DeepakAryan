@@ -78,7 +78,7 @@ const deleteProject=async(req,res)=>{
       return res.status(404).send("not found");
     }
 
-    return res.status(201).json({success:true,msg:"deleted !" });
+    return res.status(200).json({success:true,msg:"deleted !" });
   } catch (err) {
     return res.status(500).send("server error");
   }

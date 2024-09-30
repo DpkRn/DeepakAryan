@@ -12,7 +12,7 @@ import Project from "./projectDetails/Project";
 function ResentWork() {
 
   const navigate = useNavigate();
-  const { projects } = useProject();
+  const { projects,deleteProject } = useProject();
   const [projectArr, setProjectArray] = useState(projects);
   const { isAdmin } = useAuth();
   const [flag,setFlag]=useState(false)
@@ -56,6 +56,7 @@ function ResentWork() {
       navigate("/project-details");
     }
   };
+  
 
   return (
     <>
@@ -91,6 +92,17 @@ function ResentWork() {
                       onClick={() => modifyProject(project._id)}
                     >
                       Edit
+                    </button>
+                  )}
+                  {isAdmin && (
+                    <button
+                      className="bg-slate-400 px-3 py-1 rounded-xl font-bold active:bg-slate-600 hover:cursor-pointer"
+                      onClick={() => {
+                        deleteProject(project._id)
+                        toast.success('project deleted !')
+                      }}
+                    >
+                      Delete
                     </button>
                   )}
                 </div>

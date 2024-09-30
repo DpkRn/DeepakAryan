@@ -29,7 +29,19 @@ export const ProjectContextProvider = ({ children }) => {
     }
   };
 
-  
+  const deleteProject=async(id)=>{
+    try {
+      const response = await axios.delete('https://portfolio-api-pi-ten.vercel.app/api/projects/deleteproject',{id}, { withCredentials: true });
+     // const response = await axios.get(`http://localhost:8080/api/projects/getallprojects`);
+     if (response.status === 200) {
+      console.log('project deleted')
+      toast.success('project deleted !')
+     }
+   } catch (err) {
+     console.error("Error while fetching projects:", err);
+      toast.error("Something went wrong while fetching all projects!");
+   }
+  }
 
   const addProject = async (values) => {
     console.log("err",values)
