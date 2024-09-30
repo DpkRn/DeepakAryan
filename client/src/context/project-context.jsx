@@ -32,6 +32,7 @@ export const ProjectContextProvider = ({ children }) => {
   
 
   const addProject = async (values) => {
+    console.log("err",values)
     try {
        const response = await axios.post( `https://portfolio-api-pi-ten.vercel.app/api/projects/addproject`,values,{ withCredentials: true });
       //const response = await axios.post( `http://localhost:8080/api/projects/addproject`,values,{ withCredentials: true });
@@ -57,15 +58,13 @@ export const ProjectContextProvider = ({ children }) => {
     }
   };
 
-  // const showProject=()=>{
-  //   return navig
-  // }
+
 
   useEffect(() => {
     getAllProjects();  // Fetch projects when the context initializes
   }, []);
 
-  // Debugging: To monitor state changes in `projects`
+
  
 
   return (
