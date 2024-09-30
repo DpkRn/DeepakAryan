@@ -6,6 +6,6 @@ const router=require('express').Router()
 router.post('/addproject',restrictOperation,addProject)
 router.get('/getallprojects',getAllProject)
 router.post('/editproject',restrictOperation,editProject)
-router.post('/deleteproject',restrictOperation,deleteProject)
+router.delete('/deleteproject',restrictOperation,deleteProject)
 
 module.exports=router

@@ -23,7 +23,6 @@ export const ProjectContextProvider = ({ children }) => {
       }
     } catch (err) {
       console.error("Error while fetching projects:", err);
-      //  toast.error("Something went wrong while fetching all projects!");
     } finally {
       setProjectAdded(true); // Authentication check is done
     }
@@ -35,11 +34,9 @@ export const ProjectContextProvider = ({ children }) => {
      // const response = await axios.get(`http://localhost:8080/api/projects/getallprojects`);
      if (response.status === 200) {
       console.log('project deleted')
-      // toast.success('project deleted !')
      }
    } catch (err) {
      console.error("Error while fetching projects:", err);
-      // toast.error("Something went wrong while fetching all projects!");
    }
   }
 
@@ -52,7 +49,6 @@ export const ProjectContextProvider = ({ children }) => {
         getAllProjects(); // Refresh projects after adding
       }
     } catch (error) {
-    //   toast.error("Error while adding project");
       console.log("Error while adding project");
     }
   };
@@ -65,7 +61,6 @@ export const ProjectContextProvider = ({ children }) => {
         getAllProjects(); // Refresh projects after editing
       }
     } catch (error) {
-    //   toast.error("Error while updating project");
        console.log("Error while updating project");
     }
   };
