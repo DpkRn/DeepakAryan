@@ -23,7 +23,7 @@ export const ProjectContextProvider = ({ children }) => {
       }
     } catch (err) {
       console.error("Error while fetching projects:", err);
-       toast.error("Something went wrong while fetching all projects!");
+      //  toast.error("Something went wrong while fetching all projects!");
     } finally {
       setProjectAdded(true); // Authentication check is done
     }
@@ -35,11 +35,11 @@ export const ProjectContextProvider = ({ children }) => {
      // const response = await axios.get(`http://localhost:8080/api/projects/getallprojects`);
      if (response.status === 200) {
       console.log('project deleted')
-      toast.success('project deleted !')
+      // toast.success('project deleted !')
      }
    } catch (err) {
      console.error("Error while fetching projects:", err);
-      toast.error("Something went wrong while fetching all projects!");
+      // toast.error("Something went wrong while fetching all projects!");
    }
   }
 
