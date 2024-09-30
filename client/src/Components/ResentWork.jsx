@@ -8,6 +8,7 @@ import { useAuth } from "../context/auth-context";
 import { useNavigate } from "react-router-dom";
 import { useProject } from "../context/project-context";
 import Project from "./projectDetails/Project";
+import { toast, ToastContainer } from "react-toastify";
 
 function ResentWork() {
 
@@ -139,7 +140,9 @@ function ResentWork() {
          
         </div>
       )}
+
        {flag&&<Project project={project} setFlag={setFlag}/>}
+       <ToastContainer/>
     </>
   );
 }
