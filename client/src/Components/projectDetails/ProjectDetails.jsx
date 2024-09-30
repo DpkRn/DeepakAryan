@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import projectImg from "../../assets/blog-2.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
@@ -9,11 +9,33 @@ import { useProject } from "../../context/project-context";
 
 
 function ProjectDetails() {
- const {projects}=useProject()
-  const { addProject, editProject } = useProject(projects);
+  const { addProject, editProject } = useProject();
   const location = useLocation();
   const navigate = useNavigate();
   const { projectId, initialProject } = location.state || {};
+  const fileInputRef=useRef()
+  const [image,setImage]=useState(null)
+  
+
+  const handleFileRef=()=>{
+    fileInputRef.current.click();
+  }
+
+  const handleImgChange=(e)=>{
+    e.preventDefault()
+    const file=e.target.files[0];
+    if(file){
+      const reader=new FileReader();
+      reader.readAsDataURL(file)
+      reader.onload=()=>{
+        console.log(reader.result)
+          setImage(reader.result)
+      }
+      reader.onerror=()=>{
+        toast.error("image upload error")
+      }
+    }
+  }
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -30,13 +52,13 @@ function ProjectDetails() {
     onSubmit: async (values) => {
       try {
         if (projectId) {
-          await editProject(projectId, values);
+          await editProject(projectId, {...values,image});
           toast.success("Project updated successfully!");
         } else {
-          await addProject(values);
+          await addProject({...values,image});
           toast.success("Project added successfully!");
         }
-        navigate("/"); // Redirect after successful submission
+        //navigate("/"); // Redirect after successful submission
       } catch (error) {
         toast.error("An error occurred. Please try again.");
       }
@@ -53,13 +75,14 @@ function ProjectDetails() {
       <div className="form-portion bg-sky-100 sm:w-[80%] w-[90%] mx-auto rounded-3xl">
         <form className="p-5 mt-5" onSubmit={formik.handleSubmit}>
           <div className="flex md:flex-row flex-col md:justify-center md:items-center md:p-5 gap-5">
-            <div className="md:mt-1 mt-2 md:flex-1 grid place-content-center">
+            <div className="md:mt-1 mt-2 md:flex-1 grid place-content-center" onClick={handleFileRef}>
               <label htmlFor="image" className="text-xl font-bold">Image:</label>
               <img
                 className="w-[300px] h-[300px] rounded-xl border-2 border-solid border-black object-cover shadow-xl shadow-black"
-                src={projectImg}
+                src={image?image:projectImg}
                 alt="Project"
               />
+               <input type='file' ref={fileInputRef} className="hidden " onChange={handleImgChange}/>
               {/* Consider adding an image upload input here */}
             </div>
             <div className="initials flex md:flex-col flex-col md:flex-1 gap-5">

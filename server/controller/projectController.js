@@ -1,4 +1,5 @@
 const Project = require("../model/Project");
+const cloudinary = require('cloudinary').v2;
 
 //get all projects
 const getAllProject = async (req, res) => {
@@ -21,14 +22,17 @@ const getAllProject = async (req, res) => {
 //edit project
 const editProject = async (req, res) => {
   try {
-    const { id, title, description, projectType } = req.body;
-
+    const { id, title, description, projectType,image } = req.body;
+    
+    const result=await cloudinary.uploader.upload(image,{folder:'project-image'})
+    const imgUrl=result.secure_url;
     const projects = await Project.findByIdAndUpdate(
       id,
       {
         title,
         description,
         projectType,
+        image:imgUrl
       },
       { new: true }
     );
@@ -48,10 +52,12 @@ const editProject = async (req, res) => {
 
 //add project
 const addProject = async (req, res) => {
-  const { title, description, projectType } = req.body;
+  const { title, description, projectType,image } = req.body;
+
   try {
-    const project = await Project.create({ title, description, projectType });
-  
+    const result=await cloudinary.uploader.upload(image,{folder:'project-image'})
+    const imgUrl=result.secure_url;
+    const project = await Project.create({ title, description, projectType,image:imgUrl });
     return res.status(201).json({ success: true, msg: "project added !" ,project});
   } catch(err) {
     return res.status(500).send("something went wrong");

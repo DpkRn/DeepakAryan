@@ -6,6 +6,7 @@ const cors=require('cors')
 const cookieParser = require('cookie-parser')
 const {verifyToken,} = require('./middleware/VerifyToken.js')
 require('./db/Connection.js')
+const cloudinary = require('cloudinary')
 
 
 const mongoose=require('mongoose')
@@ -19,14 +20,20 @@ mongoose.connect(db_url).then(()=>{
     console.log(err)
 })
 
+cloudinary.config({
+    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
 
 app.use(cors({
-     origin:'https://deepak-aryan.vercel.app',
+     origin:['https://deepak-aryan.vercel.app','http://localhost:5173'],
      methods:['GET','POST','DELETE','PUT'],
      credentials:true
 }))
 // app.options('https://portfolio-woad-three-81.vercel.app/',cors())
-app.use(express.json())
+app.use(express.json({limit:'50mb'}))
 app.use(cookieParser())     
 
 

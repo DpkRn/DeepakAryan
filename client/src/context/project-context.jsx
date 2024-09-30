@@ -15,8 +15,8 @@ export const ProjectContextProvider = ({ children }) => {
 
   const getAllProjects = async () => {
     try {
-      const response = await axios.get('https://portfolio-api-pi-ten.vercel.app/api/projects/getallprojects', { withCredentials: true });
-      // const response = await axios.get(`${url}/api/projects/getallprojects`);
+       const response = await axios.get('https://portfolio-api-pi-ten.vercel.app/api/projects/getallprojects', { withCredentials: true });
+      // const response = await axios.get(`http://localhost:8080/api/projects/getallprojects`);
       if (response.status === 200) {
         setProjects(response.data.projects);
         console.log("Projects fetched successfully:", response.data.projects);  // Log the response projects
@@ -33,7 +33,8 @@ export const ProjectContextProvider = ({ children }) => {
 
   const addProject = async (values) => {
     try {
-      const response = await axios.post( `https://portfolio-api-pi-ten.vercel.app/api/projects/addproject`,values,{ withCredentials: true });
+       const response = await axios.post( `https://portfolio-api-pi-ten.vercel.app/api/projects/addproject`,values,{ withCredentials: true });
+      //const response = await axios.post( `http://localhost:8080/api/projects/addproject`,values,{ withCredentials: true });
       if (response.status === 201) {
         getAllProjects(); // Refresh projects after adding
       }
@@ -45,11 +46,8 @@ export const ProjectContextProvider = ({ children }) => {
 
   const editProject = async (id, values) => {
     try {
-      const response = await axios.post(
-        `https://portfolio-api-pi-ten.vercel.app/api/projects/editproject`,
-        { ...values, id },
-        { withCredentials: true }
-      );
+       const response = await axios.post(`https://portfolio-api-pi-ten.vercel.app/api/projects/editproject`,{ ...values, id },{ withCredentials: true });
+      //const response = await axios.post(`http://localhost:8080/api/projects/editproject`,{ ...values, id },{ withCredentials: true });
       if (response.status === 201) {
         getAllProjects(); // Refresh projects after editing
       }
