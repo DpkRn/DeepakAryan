@@ -23,8 +23,10 @@ const getAllProject = async (req, res) => {
 const editProject = async (req, res) => {
   try {
     const { id, title, description, projectType,image } = req.body;
-    
+    console.log(req.body)
+    console.log("adding img")
     const result=await cloudinary.uploader.upload(image,{folder:'project-image'})
+    console.log("img added")
     console.log(result)
     const imgUrl=result.secure_url;
     console.log(imgUrl)
