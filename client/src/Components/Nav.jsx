@@ -4,13 +4,42 @@ import logo1 from '../assets/LOGO.png'
 import cv from '../assets/DpkRnResume.pdf'
 
 import { useState } from 'react';
+import { useAuth } from "../context/auth-context";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const {isAdmin,LogOut}=useAuth();
+  // console.log(isAdmin)
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const clickHandler= async (e)=>{
+    e.preventDefault();
+    if(isAdmin){
+      try{
+        console.log("making request")
+        // const response=await axios.get('http://localhost:8080/api/auth/logout',{withCredentials:true})
+         const response=await axios.get('https://portfolio-server-beige-eta.vercel.app/api/auth/logout',{withCredentials:true})
+        if(response.status===200){
+            if(response.data.success===true){
+                toast.success("logout successfull")
+                LogOut()
+            }else{
+               toast.error("login denied")
+            }
+        }
+       }catch(err){
+        toast.error("login error")
+       }
+    }else{
+        toast("hire me not completed yet !")
+    }
+  }
+
   return (
     <>
     <header className= " bg-gray-800 text-white p-4   w-[100%] z-10  fixed ">
@@ -41,7 +70,7 @@ function Nav() {
 
       
         <button className=" btn2 md:block shadow-md shadow-slate-500  active:shadow-slate-950 active:bg-slate-950 cursor-pointer rounded-md p-2 ">
-                  <span className="z-10 px-5 py-2 text-[15px] font-sans font-bold ">Hire Me!</span>
+                 {isAdmin? <span className="z-10 px-5 py-2 text-[15px] font-sans font-bold " onClick={clickHandler}>Logout</span>:<span className="z-10 px-5 py-2 text-[15px] font-sans font-bold " onClick={clickHandler}>Hire Me!</span>}
                 </button>
         {/* Hamburger menu for mobile */}
         <div className="md:hidden " >
