@@ -23,7 +23,7 @@ function Nav() {
       try{
         console.log("making request")
         // const response=await axios.get('http://localhost:8080/api/auth/logout',{withCredentials:true})
-         const response=await axios.get('https://portfolio-server-beige-eta.vercel.app/api/auth/logout',{withCredentials:true})
+         const response=await axios.get('https://portfolio-api-pi-ten.vercel.app/api/auth/logout',{withCredentials:true})
         if(response.status===200){
             if(response.data.success===true){
                 toast.success("logout successfull")

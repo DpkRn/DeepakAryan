@@ -28,16 +28,16 @@ cloudinary.config({
 
 
 app.use(cors({
-    origin: 'https://deepak-aryan.vercel.app',
+    origin: ['https://deepak-aryan.vercel.app','http://localhost:8080'],
     methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
+    // allowedHeaders: ['Content-Type', 'Authorization']
 }))
-app.options('*', cors({
-    origin: 'https://deepak-aryan.vercel.app',
-    methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
-    credentials: true
-}));
+// app.options('*', cors({
+//     origin: 'https://deepak-aryan.vercel.app',
+//     methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
+//     credentials: true
+// }));
 app.use(express.json({limit:'50mb'}))
 app.use(cookieParser())     
 

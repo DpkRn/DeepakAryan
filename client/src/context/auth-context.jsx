@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   const verifyToken = async () => {
     try {
       // const response = await axios.get("http://localhost:8080/api/auth/verify", {withCredentials: true});
-       const response = await axios.get("https://portfolio-server-beige-eta.vercel.app/api/auth/verify", {withCredentials: true});
+       const response = await axios.get("https://portfolio-api-pi-ten.vercel.app/api/auth/verify", {withCredentials: true});
       if (response.status === 200 && response.data.success) {
         Authenticate();
       }
