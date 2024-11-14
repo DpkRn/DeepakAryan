@@ -13,7 +13,7 @@ function Login() {
 
 
     const login=async(e)=>{
-        e.preventDefault();
+        // e.preventDefault();
        try{
         console.log("making request")
         setLoader(true)
