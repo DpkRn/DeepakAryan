@@ -28,9 +28,10 @@ cloudinary.config({
 
 
 app.use(cors({
-     origin:'https://deepak-aryan.vercel.app',
-     methods:['GET','POST','DELETE','PUT'],
-     credentials:true
+    origin: 'https://deepak-aryan.vercel.app',
+    methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
 }))
 // app.options('https://portfolio-woad-three-81.vercel.app/',cors())
 app.use(express.json({limit:'50mb'}))
