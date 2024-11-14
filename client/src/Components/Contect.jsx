@@ -212,7 +212,7 @@ function Contect() {
                 </div>
                 <div className="ml-3 overflow-hidden">
                   <p className="text-sm font-medium text-white">Phone</p>
-                  <p className="text-sm font-medium text-white"> +91 9123295088</p>
+                  <p className="text-sm font-medium text-white"> +91 7050795540</p>
                 </div>
               </li>
             </ul>
@@ -225,7 +225,7 @@ function Contect() {
                 <div className="ml-3 overflow-hidden">
                   <p className="text-sm font-medium text-white">Email</p>
                   <p className="text-sm font-medium text-white text-wrap mr-4">
-                    anu.wizard.techno98@gmail.com
+                    d.wizard.techno98@gmail.com
                   </p>
                 </div>
               </li>

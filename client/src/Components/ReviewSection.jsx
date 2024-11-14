@@ -91,7 +91,7 @@ function ReviewSection() {
             href="#"
             className="mr-5 inline-block items-center bg-black px-6 py-3 text-center font-semibold text-white"
           >
-            Get Started
+            Add Review
           </a>
           <a
             href="#"
