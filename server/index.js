@@ -33,7 +33,11 @@ app.use(cors({
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization']
 }))
-// app.options('https://portfolio-woad-three-81.vercel.app/',cors())
+app.options('*', cors({
+    origin: 'https://deepak-aryan.vercel.app',
+    methods: ['GET', 'POST', 'DELETE', 'PUT', 'OPTIONS'],
+    credentials: true
+}));
 app.use(express.json({limit:'50mb'}))
 app.use(cookieParser())     
 
