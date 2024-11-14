@@ -22,7 +22,7 @@ function Login() {
         console.log("request done")
         if(response.status===200){
             if(response.data.success===true){
-                console.log("tost shoud work")
+                console.log("toast shoud work")
                 toast.success("login successfull")
                 navigate('/auth=true',{ state: "verified" })
                 
@@ -79,9 +79,7 @@ function Login() {
                   }}>
                      {loader&&<svg class="animate-spin h-5 w-5 mr-3 ... bg-white " viewBox="0 0 24 24"></svg>}
                     Sign in</button>
-                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
-                  </p>
+                 
               </form>
           </div>
       </div>
