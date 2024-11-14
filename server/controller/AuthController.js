@@ -22,4 +22,18 @@ const login=async (req,res)=>{
     return res.status(500).send(err)
    }
 }
-module.exports=login
+const logout=async (req,res)=>{
+    console.log('logout is in process')
+   try{
+   
+    res.cookie('jwtToken','',{maxAge:1,secure:true,sameSite:"None"})
+    console.log("successfully logged out !")
+    return res.status(200).json({success:true,msg:"user logged out !"})
+   }catch(err){
+    return res.status(500).send(err)
+   }
+}
+module.exports={
+    login,
+    logout
+}
