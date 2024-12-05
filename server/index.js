@@ -2,6 +2,7 @@ const express=require('express')
 const app=express()
 const loginRouter=require('./route/AuthRoute.js')
 const projectRouter=require('./route/ProjectRoutes.js')
+const messageRoute=require('./route/MessageRoute.js')
 const cors=require('cors')
 const cookieParser = require('cookie-parser')
 const {verifyToken,} = require('./middleware/VerifyToken.js')
@@ -43,6 +44,7 @@ app.use(cookieParser())
 
 
 app.use('/api/auth',loginRouter)
+app.use('/api/message',messageRoute)
 app.use('/api/projects',projectRouter)
 app.get('/api/auth/verify',verifyToken)
 app.get('/',(req,res)=>{

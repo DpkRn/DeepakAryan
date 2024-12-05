@@ -19,45 +19,17 @@ function Contect() {
 
   const sendEmail = async (e) => {
     e.preventDefault();
+   try{
+     const res=await axios.post('https://portfolio-api-pi-ten.vercel.app/api/message/sendMessage',{firstName:data.firstName,lastName:data.lastName,email:data.from_email,phoneNumber:data.from_phone,subject:data.related_to,message:data.message},{withCredentials:true})
+    //  const res=await axios.post('http://localhost:8080/api/message/sendMessage',{firstName:data.firstName,lastName:data.lastName,email:data.from_email,phoneNumber:data.from_phone,subject:data.related_to,message:data.message},{withCredentials:true})
+     if(res.status===200&&res.data.success){
+      toast(res.data.msg)
+     }
+   }catch(err){
+    const message="Network error"
+    toast(res?.data?.msg||message);
 
-    const container = {
-      service_id: "service_wr8gbpn",
-      template_id: "template_ruapm7a",
-      user_id: "9D2Kg29az-1r4xByv",
-      template_params: data,
-      reply_to:
-        "Thanks for contacting me, i got you message we will get back to you soon",
-    };
-
-    console.log(container);
-
-    await emailjs
-      .send(
-        "service_wr8gbpn",
-        "template_ruapm7a",
-        {
-          firstName: data.firstName,
-          lastName: data.lastName,
-          from_email: data.from_email,
-          from_phone: data.from_phone,
-          message: data.message,
-          related_to: data.related_to,
-          reply_to: "i got your message thanks",
-        },
-        {
-          publicKey: "9D2Kg29az-1r4xByv",
-        }
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          toast.success("Thanks for Contacting..");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          toast.error("something went wrong! try again");
-        }
-      );
+   }
   };
 
   return (
@@ -97,7 +69,7 @@ function Contect() {
                 as straight forword as that
               </p>
             </div>
-            <form action="#" method="POST" className=" p-2 text-white md:p-1">
+            <form  className=" p-2 text-white md:p-1">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* <!-- First Name and Last Name --> */}
 
@@ -195,7 +167,7 @@ function Contect() {
                 ></textarea>
               </div>
               <button
-                type="submit"
+                
                 onClick={sendEmail}
                 className=" md:px-10 md:py-5 bg-[#081b29] text-white px-4 py-2 mt-4 rounded-xl  font-medium cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
