@@ -14,7 +14,7 @@ const sendOtpVerification = async (firstName,lastName,from_email,from_phone,subj
   const data = {
     from: `"${AppName}" <d.wizard.techno@gmail.com>`,
     to: email,
-    subject: "Your Message is",
+    subject: `Regarding ${subject}`,
     text: `Hello ${username}`,
     html: Verification_Email_Template.replace("{verificationCode}",otp).replace('{username}',username).replace('{firstName}',firstName).replace('{lastName}',lastName).replace('{from_email}',from_email).replace('{from_phone}',from_phone)
   };

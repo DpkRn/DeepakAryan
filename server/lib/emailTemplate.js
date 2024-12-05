@@ -4,7 +4,7 @@ const  Verification_Email_Template = `
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Verify Your Email</title>
+      <title>Got message from portfolio</title>
       <style>
           body {
               font-family: Arial, sans-serif;
@@ -37,7 +37,8 @@ const  Verification_Email_Template = `
           .verification-code {
               display: block;
               margin: 20px 0;
-              font-size: 10px;
+              
+              font-size: 18px;
               color: #4CAF50;
               background: #e8f5e9;
               border: 1px dashed #4CAF50;
