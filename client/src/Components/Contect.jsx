@@ -20,9 +20,9 @@ function Contect() {
   const sendEmail = async (e) => {
     e.preventDefault();
    try{
-    //  const res=await axios.post('https://portfolio-api-pi-ten.vercel.app/api/message/sendMessage',{firstName:data.firstName,lastName:data.lastName,email:data.from_email,phoneNumber:data.from_phone,subject:data.related_to,message:data.message},{withCredentials:true})
+     const res=await axios.post('https://portfolio-api-pi-ten.vercel.app/api/message/sendMessage',{firstName:data.firstName,lastName:data.lastName,email:data.from_email,phoneNumber:data.from_phone,subject:data.related_to,message:data.message},{withCredentials:true})
      console.log("message sent !")
-     const res=await axios.post('http://localhost:8080/api/message/sendMessage',{firstName:data.firstName,lastName:data.lastName,email:data.from_email,phoneNumber:data.from_phone,subject:data.related_to,message:data.message},{withCredentials:true})
+    //  const res=await axios.post('http://localhost:8080/api/message/sendMessage',{firstName:data.firstName,lastName:data.lastName,email:data.from_email,phoneNumber:data.from_phone,subject:data.related_to,message:data.message},{withCredentials:true})
      if(res.status===200&&res.data.success){
       toast(res.data.msg)
      }
